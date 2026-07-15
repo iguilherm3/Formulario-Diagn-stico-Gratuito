@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Gratuito | Stavel Consultoria</title>
+  <meta name="description" content="Formulário de diagnóstico gratuito da Stavel Consultoria." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#eeeee0;--surface:#f8f7f0;--surface-2:#ffffff;--surface-3:#e7e7d8;--text:#222831;--muted:#5e6673;--line:#d7d4c4;--primary:#4f8a8b;--accent:#fbd46d;--accent-text:#2b2100;--shadow:0 18px 50px rgba(34,40,49,.12);--shadow-sm:0 4px 14px rgba(34,40,49,.08);--radius:18px;--radius-sm:12px;--content:1140px;--body:'Inter',sans-serif;--display:'Merriweather',serif}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:84px} body{margin:0;font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.7} a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit} img,svg{max-width:100%;display:block}
+    .container{width:min(calc(100% - 2rem),var(--content));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--text) 10%, transparent)}
+    .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+    .brand{display:flex;align-items:center;line-height:0;gap:0;padding:0}
+    .site-logo{display:block;transition:filter .2s}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.85rem 1.15rem;border-radius:999px;border:1px solid transparent;font-size:.95rem;font-weight:700;transition:.2s ease;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-text);box-shadow:0 8px 24px rgba(251,212,109,.28)}
+    .btn-primary:hover{transform:translateY(-1px);background:#f7c73f}
+    .btn-secondary{background:var(--surface-2);border-color:var(--line);color:var(--text)}
+    .btn-secondary:hover{border-color:var(--primary);color:var(--primary)}
+    .hero{padding:2.4rem 0 2.1rem}.hero-copy{display:grid;justify-items:start;max-width:100%;align-items:start;overflow:visible}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:.55rem;justify-items:start;align-items:start}
+    h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;margin:0}
+    h1{font-size:clamp(1.75rem,3.1vw,2.35rem);max-width:100%;line-height:1.12;margin:0 0 .15rem;white-space:nowrap;letter-spacing:-.03em;overflow:visible;text-overflow:clip;padding-bottom:.05rem}
+    p{margin:0}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .85rem;border-radius:999px;background:rgba(79,138,139,.12);color:var(--primary);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .hero p.lead{margin-top:.55rem;max-width:100%;color:var(--muted);font-size:.98rem;line-height:1.7;margin-left:0;white-space:nowrap;overflow:visible;text-overflow:clip}
+    .form-wrap{padding:0 0 4.5rem}
+    .card{background:var(--surface-2);border:1px solid var(--line);border-radius:26px;padding:1.5rem;box-shadow:var(--shadow-sm)}
+    .section-title{margin-bottom:1.25rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}.col-2{grid-column:span 2}
+    .field{display:grid;gap:.35rem}
+    .field label{font-weight:700;font-size:.92rem}
+    .field input,.field select,.field textarea{min-height:48px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);padding:0 1rem;color:var(--text);width:100%;font-size:.95rem}
+    .field textarea{min-height:130px;padding:.85rem 1rem;resize:vertical}
+    .subtle{font-size:.8rem;color:var(--muted)}
+    .block-title{font-size:1.2rem;margin-bottom:.75rem}
+    .repeat-box{display:grid;gap:.9rem}
+    .repeat-item{display:grid;grid-template-columns:1.2fr .8fr .8fr 1fr auto;gap:.85rem;align-items:end;padding:1rem;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+    .repeat-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .row-head{display:grid;grid-template-columns:1.2fr .8fr .8fr 1fr auto;gap:.85rem;font-size:.76rem;color:var(--muted);font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
+    .remove-btn{min-height:48px;padding:0 1rem;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--text);font-weight:700;cursor:pointer}
+    .footer-note{margin-top:1rem;color:var(--muted);font-size:.9rem}
+    
+    .sticky-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+    .section{margin-top:1.5rem}
+    .section h2{font-size:1.55rem;margin-bottom:.5rem}
+    .divider{height:1px;background:var(--line);margin:1.4rem 0}
+    .toplink{font-weight:700;color:var(--muted)}
+    @media (max-width: 900px){.col-6,.col-4,.col-3,.col-2{grid-column:span 12}.repeat-item,.row-head{grid-template-columns:1fr}.topbar-in{flex-wrap:wrap}.hero{padding-top:2.2rem}}
+    @media (max-width: 720px){h1{white-space:normal;max-width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-in">
+      <a class="brand" href="../stavel-consultoria-v16.html" aria-label="Stavel Consultoria"><img class="site-logo" src="logo.png" alt="Stavel Soluções Gerenciais" style="height:72px;width:auto;object-fit:contain;display:block"></a>
+      <a class="toplink" href="../stavel-consultoria-v16.html">Voltar ao site</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid" style="padding-top:0">
+        <div class="hero-copy" style="max-width:100%">
+          <h1>Preencha o formulário para receber sua análise gratuita</h1>
+          <p class="lead">Utilize dados referentes a 1 mês de operação para obter alguns indicadores e um mini DRE Gerencial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-wrap">
+      <div class="container">
+        <form class="card" id="diagnosticoForm" action="send_diagnostico.php" method="post">
+          <div class="grid section-title">
+            <div class="col-12"><h2>Dados da empresa</h2></div>
+            <div class="col-6 field"><label for="doc">CPF/CNPJ</label><input id="doc" name="doc" type="text" required></div>
+            <div class="col-6 field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" required></div>
+            <div class="col-4 field"><label for="impostos">Impostos e outras Taxas (%)</label><input id="impostos" name="impostos" type="number" min="0" step="0.01" required></div>
+            <div class="col-4 field"><label for="email">E-mail</label><input id="email" name="email" type="email" required></div>
+            <div class="col-4 field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" required></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section">
+            <h2>Despesas fixas</h2>
+            <div class="grid">
+              <div class="col-4 field"><label for="salarios">Salários</label><input id="salarios" name="salarios" type="number" min="0" step="0.01"></div>
+              <div class="col-4 field"><label for="prolabore">Pró-Labore</label><input id="prolabore" name="prolabore" type="number" min="0" step="0.01"></div>
+              <div class="col-4 field"><label for="desp_gerais">Despesas Gerais</label><input id="desp_gerais" name="desp_gerais" type="number" min="0" step="0.01"></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section">
+            <h2>Produtos</h2>
+            <p class="subtle">Adicione quantos produtos desejar. Cada linha será enviada como parte da planilha.</p>
+            <div class="row-head"><div>Produto</div><div>Preço de Custo</div><div>QTD vendida</div><div>Preço de venda</div><div></div></div>
+            <div id="products" class="repeat-box">
+              <div class="repeat-item product-row">
+                <div class="field"><label class="sr-only" for="produto_1">Produto</label><input id="produto_1" name="produto[]" type="text" placeholder="Nome do produto"></div>
+                <div class="field"><label class="sr-only" for="custo_1">Preço de custo</label><input id="custo_1" name="preco_custo[]" type="number" min="0" step="0.01" placeholder="0,00"></div>
+                <div class="field"><label class="sr-only" for="qtd_1">QTD vendida</label><input id="qtd_1" name="qtd[]" type="number" min="0" step="1" placeholder="0"></div>
+                <div class="field"><label class="sr-only" for="preco_1">Preço de venda</label><input id="preco_1" name="preco[]" type="number" min="0" step="0.01" placeholder="0,00"></div>
+                <button type="button" class="remove-btn" data-remove title="Remover linha">Remover</button>
+              </div>
+            </div>
+            <div class="repeat-actions">
+              <button type="button" class="btn btn-secondary" id="addProduct">Adicionar produto</button>
+            </div>
+          </div><div class="divider"></div>
+
+          <div class="section">
+            <h2>Observações</h2>
+            <div class="grid">
+              <div class="col-12 field"><label for="obs">Informações adicionais</label><textarea id="obs" name="obs" placeholder="Descreva o contexto do negócio, desafios e qualquer detalhe útil para o diagnóstico."></textarea></div>
+            </div>
+          </div>
+
+          <div class="sticky-actions">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            <a class="btn btn-secondary" href="index.html">Voltar</a>
+          </div>
+
+          <p class="footer-note">Ao enviar, os dados serão processados em formato de planilha e encaminhados para <strong>projeto.stavel@gmail.com</strong>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const products = document.getElementById('products');
+    const addProduct = document.getElementById('addProduct');
+    let productCount = 1;
+    addProduct.addEventListener('click', () => {
+      productCount += 1;
+      const row = document.createElement('div');
+      row.className = 'repeat-item product-row';
+      row.innerHTML = `
+        <div class="field"><input name="produto[]" type="text" placeholder="Nome do produto"></div>
+        <div class="field"><input name="preco_custo[]" type="number" min="0" step="0.01" placeholder="0,00"></div>
+        <div class="field"><input name="qtd[]" type="number" min="0" step="1" placeholder="0"></div>
+        <div class="field"><input name="preco[]" type="number" min="0" step="0.01" placeholder="0,00"></div>
+        <button type="button" class="remove-btn" data-remove>Remover</button>`;
+      products.appendChild(row);
+    });
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.matches('[data-remove]')) {
+        const rows = document.querySelectorAll('.product-row');
+        if (rows.length > 1) e.target.closest('.product-row').remove();
+      }
+    });
+  </script>
+</body>
+</html>
